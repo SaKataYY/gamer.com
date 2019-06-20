@@ -1,3 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn -> connect_error) {
+	die("连接失败:".$conn -> connect_error);
+}
+
+$sql = "SELECT title, text1 FROM texts";
+$result = $conn -> query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,13 +44,13 @@
 			}
 			
 			#content {
-				height: 500px;
-				background-image: url(img/beijing.PNG) ;
+				height: 800px;
+				background-image: url(img/zhuce.PNG) ;
 			}
 			
 			
 			#left {
-				width: 386px;
+				width: 600px;
 				
 				height: 290px;
 				float: left;
@@ -56,10 +71,10 @@
 			}
 			
 			#right {
-				width: 586px;
+				width: 200px;
 				
 				float: left;
-				padding: 5px;
+				
 				color: white;
 				height: 286px;
 				font-size: 20px;
@@ -76,7 +91,7 @@
 				text-decoration: none;
 			}
 			button{
-				width: 60px;
+				width: 120px;
 				height: 30px;
 				font-size: 20px;
 			}
@@ -101,21 +116,28 @@
 
 				</ul>
 			</div>
-				<div id="left">
+			<div id="right" align="right">
 					
-				</div>
-				<div id="right" align="center">
-					<form action="php/denglu.php" method="POST">
-					<br />	<br />	<br />	
-					账号&nbsp;:<input type="text" /  style="font-size: 20px;" name="user">
-					<br /><br />
-					密码&nbsp;:<input type="password" /  style="font-size: 20px;" name="password">
-					<br /><br />
-					<input type="submit" name="submit" id="submit" value="登陆">
-					</form>
-				</div>
-
+					
 			</div>
+			
+			<div id="left" align="left">
+				<?php
+				if ($result->num_rows > 0) {
+					// 输出数据
+					while($row = $result->fetch_assoc()) {
+						echo "标题:  ".$row["title"]."<br>";
+						echo "内容:  ".$row["text1"]."<br><br><br>";
+					}
+				} else {
+					echo "0 结果";
+				}
+				?>
+			</div>
+			
+				
+
+			
 		</div>
 		
 	</body>

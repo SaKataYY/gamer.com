@@ -5,7 +5,6 @@
 		<meta charset="utf-8" />
 		<title>游客</title>
 		<script type="text/javascript">
-			
 		</script>
 		<style type="text/css">
 			#contaner {
@@ -97,6 +96,7 @@
 						<li class="li1">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</a>
 					<a href="luntan.html"><li class="li1">论坛</li></a>
+					<a href="text.php"><li class="li1">文章</li></a>
 					<a href="denglu.html"><li class="li1">登录</li></a>
 					<a href="zhuce.html"><li class="li1">注册</li></a>
 					<a href="guanyuwo.html"><li class="li1">关于作者</li></a>
@@ -107,15 +107,20 @@
 					
 					
 			</div>
+			
 			<div id="left" align="left">
-					
-					&nbsp;&nbsp;主题&nbsp;:</br><input type="text" /  style="font-size: 20px; background-color: gray"><br /><br />
-					&nbsp;&nbsp;标签&nbsp;:</br><input type="text" /  style="font-size: 20px;background-color: gray"><br /><br />
-					&nbsp;&nbsp;内容&nbsp;:</br><input type="text" /  style="font-size: 20px; width: 600px; height: 300px;background-color: gray"">
-					<br /><br />
-					
-					<button type="button">发布</button>
+			<form action="php/luntan.php" method="POST" >
+					&nbsp;&nbsp;主题&nbsp;:
+				</br><input type="text" name="title" /  style="font-size: 20px; background-color: gray">
+				<br /><br />
+					&nbsp;&nbsp;内容&nbsp;:
+				</br>
+				<textarea name="text" rows="20" cols="60"  style="font-size: 20px; background-color: gray"></textarea>
+				<br /><br />
+					<input type="submit" value="发布">
+			</form>
 			</div>
+			
 				
 
 			

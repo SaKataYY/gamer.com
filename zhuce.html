@@ -4,9 +4,6 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>游客</title>
-		<script type="text/javascript">
-			
-		</script>
 		<style type="text/css">
 			#contaner {
 				width: 1000px;
@@ -97,6 +94,7 @@
 						<li class="li1">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</a>
 					<a href="luntan.html"><li class="li1">论坛</li></a>
+					<a href="text.php"><li class="li1">文章</li></a>
 					<a href="denglu.html"><li class="li1">登录</li></a>
 					<a href="zhuce.html"><li class="li1">注册</li></a>
 					<a href="guanyuwo.html"><li class="li1">关于作者</li></a>
@@ -104,17 +102,17 @@
 				</ul>
 			</div>
 				<div id="left" align="right">
+					<form action="php/zhuce.php" method="POST">
 					<br />	<br />	<br />	
-					&nbsp;&nbsp;账号&nbsp;:<input type="text" /  style="font-size: 20px;"><br /><br />
+					&nbsp;&nbsp;账号&nbsp;:<input type="text" /  style="font-size: 20px;" name="user"><br /><br />
 					&nbsp;&nbsp;手机&nbsp;:<input type="text" /  style="font-size: 20px;"><br /><br />
 					&nbsp;&nbsp;邮箱&nbsp;:<input type="text" /  style="font-size: 20px;"><br /><br />
-					&nbsp;&nbsp;密码&nbsp;:<input type="password" /  style="font-size: 20px;"><br /><br />
+					&nbsp;&nbsp;密码&nbsp;:<input type="password" /  style="font-size: 20px;" name="password"><br /><br />
 					确认密码&nbsp;:<input type="password" /  style="font-size: 20px;"><br /><br />
-					<button type="button">注册</button>
+					<input type="submit" value="注册" style="font-size: 20px;"></input>
+					</form>
 				</div>
-				<div id="right" align="right">
-					
-					
+				<div id="right" align="right">	
 				</div>
 
 			</div>
